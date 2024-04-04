@@ -1,0 +1,242 @@
+[
+    {
+        "subjectName": "HTML",
+        "Module": {
+            "Module1": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "2",
+                    "Practice3": "3"
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module2": {
+                "Practices":{
+                    "Practice1": "P2"
+                },
+                "Assignments":{
+                    "Assignment1": "/home/prasann.maniya/Desktop/JavaScript/3000-Prasann.M-24-PHPOPS/Javascript/Day2/Assignments/Assignment2/Source/Module2Assignment2/index.html"
+                }
+            }
+        }
+    },
+    {
+        "subjectName": "CSS",
+        "Module": { 
+            "Module1": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "",
+                    "Practice3": ""
+                },
+                "Assignments":{
+                    "Assignment1": "",
+                    "Assignment2": ""
+                }
+            },
+            "Module2": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "",
+                    "Practice3": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module3": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "",
+                    "Practice3": "",
+                    "Practice4": "",
+                    "Practice5": "",
+                    "Practice6": "",
+                    "Practice7": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module4": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "",
+                    "Practice3": "",
+                    "Practice4": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module5": {
+                "Practices":{
+                    "Practice1": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            }
+        }
+    },
+    {
+        "subjectName": "BootStrap",
+        "Module": {
+            "Module1": {
+                "Practices":{
+                    "Practice1": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module2": {
+                "Practices":{
+                    "Practice1": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module3": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module4": {
+                "Practices":{
+                    "Practice1": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module5": {
+                "Practices":{
+                    "Practice1": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            }
+        }
+    },
+    {
+        "subjectName": "JavaScript",
+        "Module": {
+            "Module1": {
+                "Practices":{
+                    "Practice1": "/data/Javascript/Day1/Practice/Practice1/Source/Module1Pracice1/index.html",
+                    "Practice2": "",
+                    "Practice3": "",
+                    "Practice4": "",
+                    "Practice5": "",
+                    "Practice6": "",
+                    "Practice7": "",
+                    "Practice8": ""
+                },
+                "Assignments":{
+                    "Assignment1": "/data/Javascript/Day1/Assignments/Assignment1/Source/Module1Assignment1/index.html",
+                    "Assignment2": "/data/Javascript/Day1/Assignments/Assignment2/Source/Module1Assignment2/index.html"
+                }
+            },
+            "Module2": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "",
+                    "Practice3": "",
+                    "Practice4": "",
+                    "Practice5": "",
+                    "Practice6": "",
+                    "Practice7": ""
+                },
+                "Assignments":{
+                    "Assignment1": "",
+                    "Assignment2": ""
+                }
+            },
+            "Module3": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "",
+                    "Practice3": "",
+                    "Practice4": "",
+                    "Practice5": "",
+                    "Practice6": "",
+                    "Practice7": "",
+                    "Practice8": "",
+                    "Practice9": ""
+                },
+                "Assignments":{
+                    "Assignment1": "",
+                    "Assignment2": ""
+                }
+            },
+            "Module4": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "",
+                    "Practice3": "",
+                    "Practice4": "",
+                    "Practice5": "",
+                    "Practice6": ""
+                },
+                "Assignments":{
+                    "Assignment1": "",
+                    "Assignment2": ""
+                }
+            },
+            "Module5": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": "",
+                    "Practice3": "",
+                    "Practice4": "",
+                    "Practice5": "",
+                    "Practice6": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module6": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": ""
+                },
+                "Assignments":{
+                    "Assignment1": "",
+                    "Assignment2": ""
+                }
+            }
+        }
+    },
+    {
+        "subjectName": "jQuery",
+        "Module": {
+            "Module1": {
+                "Practices":{
+                    "Practice1": "",
+                    "Practice2": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            },
+            "Module2": {
+                "Practices":{
+                    "Practice1": ""
+                },
+                "Assignments":{
+                    "Assignment1": ""
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#container{
+    border: 1px solid rgb(223, 225, 225);
+    background-color: rgb(240, 244, 244);
+    padding: 20px;
+    box-shadow: 3px 3px 10px 2px rgb(125, 125, 125);
+}
+#container:hover{
+    box-shadow: 6px 5px 10px 4px rgb(125, 125, 125);
+}
+
+
+button{
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    border: 2px outset darkgray;    
+    border-radius: 7px;
+}
+
+table{
+    border: 2px outset black; 
+}
+td, th{
+    padding: 10px 15px 10px 5px;
+}

@@ -1,0 +1,87 @@
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#container{
+    border: 1px solid rgb(223, 225, 225);
+    background-color: rgb(240, 244, 244);
+    padding: 20px;
+    box-shadow: 3px 3px 10px 2px rgb(125, 125, 125);
+}
+#container:hover{
+    box-shadow: 6px 5px 10px 4px rgb(125, 125, 125);
+}
+input, select{
+    margin-bottom: 10px;
+}
+#txtSearch{
+    height: 30px;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    border: 2px outset darkgray;
+    border-radius: 7px;
+}
+#txtSearch:focus{
+    background-color: white;
+    color: #000;
+    border: 2px outset darkgray;
+    border-radius: 7px;
+}
+#Source, #Destination{
+    height: 30px;
+    width: 150px;
+    border: 2px outset darkgray;
+    border-radius: 7px;
+}
+#departureDate{
+    height: 30px;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    border: 2px outset darkgray;
+    border-radius: 7px;
+}
+#departureDate:focus{
+    background-color: white;
+    color: #000;
+    border: 2px outset darkgray;
+    border-radius: 7px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+#btnSearch{
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    border: 2px outset darkgray;    
+    border-radius: 7px;
+}
+
+button{
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    border: 2px outset darkgray;    
+    border-radius: 7px;
+}
+
+table{
+    border: 2px outset black; 
+}
+td, th{
+    padding: 10px 15px 10px 5px;
+}
+
+span{
+    color: red;
+    font-size: medium;
+    font-weight: 600;
+}

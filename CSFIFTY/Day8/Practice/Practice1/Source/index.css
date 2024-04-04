@@ -1,0 +1,136 @@
+.error {
+    color: red;
+    padding-left: 15px;
+}
+
+#container {
+    max-width: fit-content;
+    border: 5px;
+    border-color: rgb(5, 25, 75);
+    border-style: inset;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgb(5, 30, 80);
+}
+
+#container:hover{
+    box-shadow: 8px 8px 10px rgb(5, 30, 80);
+}
+
+.lables_head {
+    color: rgb(5, 30, 80);
+    font-size: large;
+    font-weight: 600;
+}
+
+#state_id,
+#city_id,
+#area_id {
+    font-size: medium;
+    font-weight: 600;
+    background-color: rgb(5, 25, 75);
+    color: rgb(200, 232, 255);
+    padding: 3px 5px;
+    border-radius: 15px;
+}
+
+#user_dob_id {
+    font-size: medium;
+    font-weight: 600;
+    background-color: rgb(5, 25, 75);
+    color: rgb(200, 232, 255);
+    padding: 3px 5px;
+    border-radius: 15px;
+}
+
+#name_inputbox_id {
+    font-size: large;
+    font-weight: 700;
+    color: rgb(200, 232, 255);
+    background-color: rgb(5, 25, 75);
+    padding: 3px 5px;
+    border-radius: 15px;
+    border-style: outset;
+}
+
+#submitButton {
+    font-size: large;
+    font-weight: 700;
+    color: rgb(200, 232, 255);
+    background-color: rgb(5, 25, 75);
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.deleteButton{
+    font-size: medium;
+    font-weight: 600;
+    color: rgb(200, 232, 255);
+    background-color: rgb(5, 25, 75);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.entris_title{
+    color: rgb(5, 25, 75);
+    font-size: x-large;
+    font-weight: 700;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+#submit_button_container {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.lables_inside {
+    color: rgb(5, 25, 75);
+    font-size: larger;
+    font-weight: 700;
+}
+
+#entries{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 20px;
+}
+
+table{
+    border: 2px outset rgb(5, 25, 75);
+    color: rgb(5, 25, 75);
+    margin: 20px;
+}
+
+th{
+    font-size: large;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+
+td{
+    font-size: medium;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+body {
+    background-color: rgb(200, 232, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+    padding: 20px;
+}
+
+.mini_container {
+    margin-bottom: 20px
+}

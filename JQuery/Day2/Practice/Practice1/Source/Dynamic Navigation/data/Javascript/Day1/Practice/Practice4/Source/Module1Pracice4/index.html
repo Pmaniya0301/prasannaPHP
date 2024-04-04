@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+<script>
+    const arr = [1,2,3,4,5,6,7,8,10];
+    
+    let i = 1;
+    let output = false;
+    for(let index = 1; index < arr.length; index++) {
+        if (i == arr[index]) {
+            i++;
+            output = true;
+        }else{
+            output = false;
+        }
+    }
+    document.getElementById("result").innerHTML = output;
+    
+</script>
+</html>

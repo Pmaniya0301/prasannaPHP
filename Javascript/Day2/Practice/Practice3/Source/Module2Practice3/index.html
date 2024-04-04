@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main_container">
+    <form>
+
+      <!-- Write a JavaScript function to check whether a string is blank or not -->
+
+        <label for="user_string">Please enter some String :&nbsp;</label>
+        <input type="text" name="user_string" id="user_string"><p id="string_error"></p><br>
+
+        <label for="user_number">Please enter Number :&nbsp;</label>
+        <input type="number" name="user_number" id="user_number" placeholder="from"><p id="number_error"></p><br>
+
+        <label for="user_number2">Please enter Number 2:&nbsp;</label>
+        <input type="number" name="user_number2" id="user_number2" placeholder="to"><p id="number_error2"></p><br>
+
+        <button type="button" onclick="stringcheck()">Submit</button><br><br>
+        
+        <p id="title_of_output"></p>
+        <div id="output_show"></div>
+    </form>
+    
+
+    <script src="main.js"></script>
+  </div>
+  
+</body>
+
+</html>

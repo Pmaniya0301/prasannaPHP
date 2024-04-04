@@ -1,0 +1,28 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#container{
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+
+}
+#tableTitle{
+  display: block;
+  font-size: xx-large;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 10px 0;
+  
+}
+.tableRows{
+  text-align: center;
+}
+.tabledata{
+  padding: 4px;
+}

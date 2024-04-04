@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="date" name="date1" id="date1">
+    <input type="date" name="date1" id="date2">
+    <div id="result"></div>
+    <button type="button" onclick="runpractice()">Submit</button>
+</body>
+<script>
+    function runpractice() {
+        let date1 = document.getElementById("date1").value;
+        let date2 = document.getElementById("date2").value;
+
+        let date_1 = Date.parse(date1);
+        let date_2 = Date.parse(date2);
+
+        
+        if(date_1>date_2){
+            document.getElementById("result").innerHTML="date 1 is bigger."
+        }else if(date_1 == date_2){
+            document.getElementById("result").innerHTML="dates are equal."
+        }else{
+            document.getElementById("result").innerHTML="date 2 is bigger."
+        }
+        
+    }
+</script>
+
+</html>

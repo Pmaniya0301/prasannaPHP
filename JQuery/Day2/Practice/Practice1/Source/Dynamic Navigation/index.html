@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <nav id="subjectNav"></nav>
+  <div id="ModuleList" class="d-inline list-group p-3"></div>
+  <div id="assiAndpracList" class="d-inline list-group p-3"></div>
+  <div id="showInContainer"></div>
+</body>
+
+<script>
+  $(document).ready(function () {
+
+    $.getJSON("/data.json", function (data) {
+      console.log(data);
+
+      let ul = $(`<ul class="nav nav-tabs card-header-tabs "></ul>`)
+      $.each(data, function (key, val) {
+        $(`<li class="list-group nav-item p-3 pe-4 me-4 mb-2"></li>`).text(`${val.subjectName}`).appendTo(ul).click(function () {
+          $("#showInContainer").html("")
+          $("#assiAndpracList").html("")
+          $(val.Module).each(function (key, module) {
+            console.log(module);
+
+            $("#ModuleList").html("")
+            let keysForModule = Object.keys(module)
+            $(keysForModule).each(function (index, ModuleName) {
+              let modulePrint = $(`<div class='d-inline me-4 text-primary"'></div>`).text(ModuleName).click(function(){
+              
+              let asspracPrint = $("#assiAndpracList").html("")
+              $("#showInContainer").html("")
+              
+              let practices = module[keysForModule[index]].Practices
+              let assignment = module[keysForModule[index]].Assignments
+
+              $(practices).each(function (key, data) {
+                let practicesKeys = Object.keys(data);
+                $(practicesKeys).each(function (index, practiceName) {
+                  console.log(data[practicesKeys[index]]);
+                  let pracName = $(`<li class=" list-group nav-item mt-1 ms-3" ></li>`).appendTo("#assiAndpracList").text(practicesKeys[index]).click(function () {
+                    console.log(data[practicesKeys[index]]);
+                    let link = "" + (data[practicesKeys[index]])
+                    // $("#showInContainer").html(`<iframe src="${link}"></iframe>`)
+                    $("#showInContainer").load(link)
+                  })
+                  asspracPrint.append(pracName)
+                })
+              })
+
+              $(assignment).each(function (key, data) {
+                let assignmentKey = Object.keys(data);
+                $(assignmentKey).each(function (index, assignmentName) {
+                  console.log(data[assignmentKey[index]]);
+                  let assiName = $(`<li  class=" list-group nav-item mt-1 ms-3"></li>`).appendTo("#assiAndpracList").text(assignmentKey[index]).click(function () {
+                    console.log(data[assignmentKey[index]]);
+                    let link = "" + (data[assignmentKey[index]])
+                    // $("#showInContainer").html(`<iframe src="${link}" width="100%" height="300" ></iframe>`)
+                    $("#showInContainer").load(link)
+                  })
+                })
+                })
+              })
+              modulePrint.appendTo("#ModuleList")
+            })
+          })
+        })
+      })
+      $("#subjectNav").append(ul)
+    })
+  })
+</script>
+
+</html>

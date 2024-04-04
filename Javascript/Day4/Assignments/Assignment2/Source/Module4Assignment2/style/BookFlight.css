@@ -1,0 +1,73 @@
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#container{
+    border: 1px solid rgb(223, 225, 225);
+    background-color: rgb(240, 244, 244);
+    padding: 20px;
+    box-shadow: 3px 3px 10px 2px rgb(125, 125, 125);
+}
+#container:hover{
+    box-shadow: 6px 5px 10px 4px rgb(125, 125, 125);
+}
+input{
+    margin-bottom: 10px;
+}
+
+#name_error, #count_error{
+    color: red;
+    font-size: medium;
+    font-weight: 600;
+}
+
+#btnbook{
+    margin-top: 20px;
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    border: 2px outset darkgray;    
+    border-radius: 7px;
+}
+
+#Name, #Qty, #totalPrice{
+    height: 30px;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    border: 2px outset darkgray;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+#Name:focus, #Qty:focus, #totalPrice:focus{
+    background-color: white;
+    color: #000;
+    border: 2px outset darkgray;
+    border-radius: 7px;
+}
+
+span{
+    display: block;
+}
+
+#FlightName{
+    font-size: xx-large;
+    font-weight: 800;
+}
+
+#FlightPrice{
+    font-size: larger;
+    font-weight: 800;
+}
+
+#tax{
+    font-size: large;
+    font-weight: 700;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}

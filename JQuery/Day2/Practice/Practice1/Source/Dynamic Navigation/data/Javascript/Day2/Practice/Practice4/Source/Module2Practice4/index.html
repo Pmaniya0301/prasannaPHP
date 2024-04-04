@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main_container">
+    <form>
+      <p id="title_of_output"></p>
+      <input type="date" name="date1" id="date1"><br>
+      <input type="date" name="date2" id="date2">
+      <div id="result"></div>
+      <button type="button" onclick="check()">Submit</button>
+    </form>
+
+
+    <script>
+      function check() {
+        let date1 = new Date(document.getElementById("date1").value);
+        let date2 = new Date(document.getElementById("date2").value);
+
+        if (date1.getTime() == date2.getTime()) {
+          console.log("0")
+          document.getElementById("result").innerHTML = "0"
+        } else if (date1.getTime() > date2.getTime()) {
+          let diff = date1.getTime() - date2.getTime();
+          let days = Math.ceil(diff / (1000 * 3600 * 24));
+          console.log(days);
+          document.getElementById("result").innerHTML = days
+        } else {
+          let diff = date2.getTime() - date1.getTime();
+          let days = Math.ceil(diff / (1000 * 3600 * 24));
+          console.log(days);
+          document.getElementById("result").innerHTML = days
+        }
+      }
+    </script>
+  </div>
+
+</body>
+
+</html>

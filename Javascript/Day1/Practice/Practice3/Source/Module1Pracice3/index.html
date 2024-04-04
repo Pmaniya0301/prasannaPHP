@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var globalvar = 10;
+    let globallet = 20;
+
+    console.log("this is calling function 1");
+
+    function fun1(){
+        globallet = 15;
+        globalvar = 15;
+        let locallet = 20;
+        var localvar = 20;
+        console.log(globalvar);
+        console.log(globalvar);
+        console.log(locallet);
+        console.log(localvar);
+    }
+
+    console.log("this is calling function 1");
+
+    function fun2(){
+        globallet = 40;
+        globalvar = 40;
+        let locallet = 40;
+        var localvar = 40;
+        console.log(globalvar);
+        console.log(globalvar);
+        console.log(locallet);
+        console.log(localvar);
+    }
+</script>
+</html>

@@ -1,0 +1,1 @@
+1. Make a function that takes in a single parameter and returns a new promise. using setTimeout, after 500 milliseconds

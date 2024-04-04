@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>M2A1</title>
+</head>
+
+<body>
+
+  <input type="hidden" name="id" id="id">
+  <div class="row m-2">
+    <div class="input-group col align-middle">
+      <label for="name" class="input-group-text">Name</label>
+      <input type="text" name="name" id="name" class="form-control"><br>
+    </div>
+    <div class="col"><span id="name_error" class="text-danger"></span></div>
+
+    <div class="input-group col">
+      <label for="email" class="input-group-text">Email</label>
+      <input type="email" name="email" id="email" class="form-control"><br>
+      
+    </div>
+    <div class="col"><span id="email_error" class="text-danger"></span></div>
+    
+  </div>
+
+  <div class="row mx-2 ">
+    <div class="input-group col">
+      <label for="gender">Gender : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="radio" name="gender" id="male" class="form-check-input">&nbsp;&nbsp;
+      <label for="gender" class="form-check-label">Male</label> &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="gender" id="female" class="form-check-input">&nbsp;&nbsp;
+      <label for="gender" class="form-check-label">Female</label><br>
+    </div>
+    <div class="col"><span id="gender_error" class="text-danger" ></span></div>
+
+    <div class="input-group col">
+      <label for="status" class="col-form-label">Status :&nbsp;&nbsp;</label>
+      <select name="status" id="status" class="form-select form-select-md mb-3">
+        <option value="active">active</option>
+        <option value="inactive">inactive</option>
+      </select><br>
+    </div>
+    <div class="col"></div>
+    </div>
+    
+  </div>
+
+  <div class="d-inline-flex gap-4 mx-2">
+    <button type="button" id="btnSubmit" class="btn btn-primary align-middle"
+      style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 2rem; --bs-btn-font-size: 1rem;">Submit</button>
+    <button type="button" id="btnEdit" disabled="true" class="btn btn-secondary align-middle"
+      style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 2rem; --bs-btn-font-size: 1rem;">Edit</button>
+    <button type="button" id="btnClear" class="btn btn-light align-middle"
+      style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 2rem; --bs-btn-font-size: 1rem;">Clear</button>
+    <br><br>
+  </div>
+
+  <table id="userTable" class="table table-success table-stripe my-2">
+    <caption style="display: none;">Table Caption</caption>
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Status</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody id="userTbody"></tbody>
+  </table>
+</body>
+
+<script>
+  $(document).ready(function () {
+
+    $("#name, #email, [name = 'gender']").on("keypress change", function () { validate() })
+
+    showData();
+
+    $("#btnSubmit").click(function () {
+      let obj = {
+        name: $("#name").val(),
+        email: $("#email").val(),
+        gender: $("[name ='gender']:checked").attr("id"),
+        status: $("#status").val()
+      }
+      console.log(obj);
+      insertData(obj);
+      showData();
+    })
+
+    $("#btnEdit").click(function () {
+      let obj = {
+        name: $("#name").val(),
+        email: $("#email").val(),
+        gender: $("[name ='gender']:checked").attr("id"),
+        status: $("#status").val()
+      }
+      id = $("#id").val()
+      console.log(obj);
+      editData(obj, id);
+      showData();
+      validate()
+
+    })
+
+    $("#btnClear").click(function () {
+      $("#name_error").text("");
+    $("#email_error").text("");
+    $("#gender_error").text("")
+      $("#name").val("")
+      $("#email").val("")
+      $(`#female`).attr("checked", false)
+      $(`#male`).attr("checked", false)
+      $("#status").val("active")
+      $("#btnSubmit").attr("disabled", false)
+      $("#btnEdit").attr("disabled", true)
+    })
+  })
+
+  function insertData(obj) {
+    if (!validate()) {
+      var settings = {
+        "url": "https://gorest.co.in/public/v2/users",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Authorization": "Bearer 501366929b793c2b84c496bf02852426809a8a1e6c3a69a81782ff3a016e40b6"
+        },
+        "data": JSON.stringify(obj),
+      };
+
+      $.ajax(settings).done(function (response) {
+        showData()
+        console.log(response);
+      });
+    }
+
+  }
+
+  function showData() {
+    var settings = {
+      "url": "https://gorest.co.in/public/v2/users?per_page=100 ",
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Accept": "application/json",
+        "x-pagination-limit": 30,
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 501366929b793c2b84c496bf02852426809a8a1e6c3a69a81782ff3a016e40b6"
+      },
+    };
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+
+      $("#userTbody").html("");
+      $(response).each(function (index, element) {
+
+        let tr = $("<tr></tr>");
+        $(`<td>${element.name}</td>`).appendTo(tr)
+        $(`<td>${element.email}</td>`).appendTo(tr)
+        $(`<td>${element.gender}</td>`).appendTo(tr)
+        $(`<td>${element.status}</td>`).appendTo(tr)
+        $(`<td><button id="editBtn${element.id}" class="btn btn-warning">Edit</button></td>`).appendTo(tr)
+        $(`<td><button id="deleteBtn${element.id}" class="btn btn-danger">Delete</button></td>`).appendTo(tr)
+        $("#userTbody").append(tr)
+
+        $(`#editBtn${element.id}`).click(function () {
+          $("#btnSubmit").attr("disabled", true)
+          $("#btnEdit").attr("disabled", false)
+
+          $("#name").val(element.name)
+          $("#email").val(element.email)
+
+          console.log(element.gender);
+          if (element.gender == "male") {
+            $(`#female`).attr("checked", false)
+            $(`#male`).attr("checked", true)
+          }
+          if (element.gender == "female") {
+            $(`#male`).attr("checked", false)
+            $(`#female`).attr("checked", true)
+
+          }
+
+          $("#status").val(element.status)
+          $("#id").val(element.id)
+        })
+
+        $(`#deleteBtn${element.id}`).click(function () {
+          if (confirm("Confirm Delete") == true) {
+            deleteUser(element.id)
+          }
+        })
+      })
+
+    });
+  }
+
+  function editData(obj, id) {
+
+    if (!validate()) {
+      var settings = {
+        "url": "https://gorest.co.in/public/v2/users/" + id,
+        "method": "PATCH",
+        "timeout": 0,
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Authorization": "Bearer 501366929b793c2b84c496bf02852426809a8a1e6c3a69a81782ff3a016e40b6"
+        },
+        "data": JSON.stringify(obj),
+      };
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        showData()
+      });
+    }
+
+
+  }
+
+  function deleteUser(id) {
+    var settings = {
+      "url": "https://gorest.co.in/public/v2/users/" + id,
+      "method": "DELETE",
+      "timeout": 0,
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 501366929b793c2b84c496bf02852426809a8a1e6c3a69a81782ff3a016e40b6"
+      },
+    };
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      showData()
+    });
+
+  }
+
+  function validate() {
+
+
+    $("#name_error").text("");
+    $("#email_error").text("");
+    $("#gender_error").text("")
+
+
+    let name = $("#name").val();
+    let email = $("#email").val();
+    let gender = $("[name ='gender']:checked").attr("id");
+
+    let error = false;
+
+    if (name.trim() == "") {
+      $("#name_error").text("Name is empty")
+      error = true;
+    } else {
+      if (!(/^[a-zA-Z\s]+$/.test(name))) {
+        $("#name_error").text("Wrong Name Formate")
+        error = true;
+      }
+    }
+    if (email.trim() == "") {
+      $("#email_error").text("Email is empty")
+      error = true;
+    } else {
+      if (!(/^[a-zA-Z0-9._-]+@[a-zA-Z-]+\.[a-zA-Z]+$/.test(email))) {
+        $("#email_error").text("Wrong Email Formate")
+        error = true;
+      }
+    }
+    if (gender != "male" && gender != "female") {
+      $("#gender_error").text("Gender is empty")
+      error = true;
+    }
+
+    return error;
+
+  }
+
+</script>
+
+</html>

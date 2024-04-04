@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+
+        //in js var follows hoisting where let and const doesn't
+
+
+        //can use function after defining
+        // let i = 100;
+        // function myFunc(){
+        //     return i = 50;
+        // }
+        // document.getElementById("result").innerHTML = myFunc();
+
+        //can use function before defining
+        // let i = 100;
+        // document.getElementById("result").innerHTML = myFunc();
+        // function myFunc(){
+        //     return i = 50;
+        // }
+        
+        //cannot use function before defining function expression
+        let i = 100;
+        document.getElementById("result").innerHTML = myFunc();
+        const x = function(){
+            return i = 50;
+        }
+    </script>
+</body>
+
+</html>

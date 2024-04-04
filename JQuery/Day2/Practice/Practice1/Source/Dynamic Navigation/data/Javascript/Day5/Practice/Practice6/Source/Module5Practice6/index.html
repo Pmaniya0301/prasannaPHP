@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        let user = {
+            Name: "Prasanna",
+            Address: "Surat",
+            Designation: "SDI-I"
+        }
+
+        //outer function param can access inside the nested function
+        // function myFunc(user){
+
+        //     function Print(){
+        //         document.getElementById("result").innerHTML = user.Name + " " + user.Address + " " + user.Designation;
+        //     }
+
+        //     Print()
+        // }
+        // myFunc(user)
+
+        //outer function pass inside the function can cause infinite recursion
+        // function myFunc(user) {
+
+        //     function Print() {
+        //         document.getElementById("result").innerHTML = user.Name + " " + user.Address + " " + user.Designation;
+        //     }
+        //     Print()
+        //     myFunc(user)
+        // }
+        // myFunc(user)
+
+
+        //it will cause Print is not defined cause it is out of scope
+        function myFunc(user) {
+
+            function Print() {
+                document.getElementById("result").innerHTML = user.Name + " " + user.Address + " " + user.Designation;
+            }
+            // Print()
+        }
+        myFunc(user);
+        Print()
+
+    </script>
+</body>
+
+</html>

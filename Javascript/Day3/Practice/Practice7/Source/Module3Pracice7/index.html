@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+html {
+            scroll-behavior: smooth;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        ul{
+            background-color: beige;
+            box-shadow: 5px 5px 10px rgb(33, 32, 32);
+            margin: 30px;
+            margin-bottom: 40px;
+        }
+        li{
+            list-style-type: none;
+            padding: 10px;
+            padding-left: 0px;        
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            font-size: large;
+        }
+
+        #mainContainer{
+            margin: 30px;
+            margin-bottom: 40px;
+            /* border: 2px solid black; */
+            padding: 20px;
+            background-color: beige;
+            box-shadow: 5px 5px 10px black;
+            font-weight: 700;
+            font-size: x-large;
+        }
+    </style>
+    <title>Module 3 - Pracice 7</title>
+</head>
+
+<body>
+    
+    <ul id="tabs_ul">
+        <li><a href="#section1">Section1</a></li>
+        <li><a href="#section2">Section2</a></li>
+        <li><a href="#section3">Section3</a></li>
+    </ul>
+    <div id="mainContainer"></div>
+</div>
+    
+</body>
+<script>
+
+    let tabsul = document.querySelectorAll("li a");
+
+    window.addEventListener("DOMContentLoaded", function(){
+        let secid = "#section1";
+        loadSection(secid)})
+
+    tabsul.forEach(tab => {
+        tab.addEventListener("click", function () {
+            let secid = this.getAttribute("href");
+            history.pushState(null, null, `${secid}`);  
+        });
+    })
+
+    window.addEventListener("popstate", function(){
+        let secid = location.hash;
+        console.log(secid);
+        loadSection(secid)});
+
+    function loadSection(secid) {
+        let body = document.getElementById("mainContainer");
+        document.getElementById("mainContainer").innerHTML = "";
+        let section = document.createElement("div");
+        let sectionNo = secid.charAt(secid.length - 1);
+        section.innerHTML = `This is Section with Section No ${sectionNo} `;
+        body.appendChild(section);
+    }
+</script>
+
+</html>

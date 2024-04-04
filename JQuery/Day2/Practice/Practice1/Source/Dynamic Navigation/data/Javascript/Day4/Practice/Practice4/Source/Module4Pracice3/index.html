@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="practice4" id="practice4"><br>
+    <button onclick="practice4()">Submit</button><br>
+    <span id="result"></span>
+
+    <script>
+        function practice4(){
+            let userTxt = document.getElementById("practice4").value;
+
+            // a new promise
+            new Promise(function(resolve, reject){
+                //logic for string validation
+                if(userTxt != "" && !(/^[\d]+$/.test(userTxt))){
+                    //logic for string reverse
+                    let arr = userTxt.split("");
+                    arr.reverse();
+                    let result = arr.join("");
+                    //reverse string resolved
+                    resolve(result)
+                }else{
+                    // o/w give error using reject
+                    reject("Wrong Input")
+                }
+            }).then((result) => {
+                //handle resolve
+                document.getElementById("result").innerHTML = `${result} this is reversed String`
+                console.log(result + " this is reversed String");
+            }).catch((value1) =>{
+                // handle reject
+                document.getElementById("result").innerHTML = `${value1}`
+                console.log(value1);
+            })
+        }
+    </script>
+</body>
+</html>

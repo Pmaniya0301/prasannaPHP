@@ -1,0 +1,54 @@
+#main_container{
+  width: fit-content;
+  border: 5px inset darkblue;
+  margin: auto auto;
+  padding: 10px;
+  background-color: rgb(232, 232, 232);
+}
+label{
+  color: darkblue;
+  font-weight: 700;
+  font-size: larger;
+}
+#title_array_list{
+  color: green;
+  font-size: x-large;
+  font-weight: 700;
+} 
+#array_show{
+  color: darkblue;
+  font-size: sslarge;
+  font-weight: 700;
+}
+button{
+  display: flex;
+  height: 30px;
+  width: 100px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px 15px;
+  background-color: darkblue;
+  border: 3px inset darkgray;
+  color: rgb(232, 232, 232);
+  font-weight: 700;
+  font-size: large;
+  border-radius: 20px;
+  box-shadow: 2px 2px black;
+}
+#user_string{
+  height: 30px;
+  width: 250px;
+  background-color: darkblue;
+  border: 3px inset darkgray;
+  color: rgb(232, 232, 232);
+  font-weight: 700;
+  font-size: large;
+  border-radius: 20px;
+  box-shadow: 2px 2px black;
+}
+#result_show{
+  color: red;
+  font-size: large;
+  font-weight: 700;
+}

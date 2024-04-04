@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <form>
+            <input type="text" name="name" id="name" placeholder="Enter Full Name">
+            <span id="name_error"></span><br>
+            <input type="text" name="age" id="age" placeholder="Enter Age">
+            <span id="age_error"></span><br>
+            <input type="text" name="annualIncome" id="annualIncome" placeholder="Enter Annual Income">
+            <span id="annualIncome_error"></span><br>
+            <input type="text" name="annualInvestment" id="annualInvestment" placeholder="Enter Annual Investment">
+            <span id="annualInvestment_error"></span><br>
+            <input type="text" name="contactNo" id="contactNo" placeholder="Enter Contact Number">
+            <span id="contactNo_error"></span><br>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+<script>
+
+
+
+
+    document.getElementById("submit").addEventListener("click", (event) => {
+
+        event.preventDefault();
+        validate();
+
+    })
+
+    function validate() {
+        let name = (document.getElementById("name").value).trim();
+        let age = (document.getElementById("age").value).trim();
+        let annualIncome = (document.getElementById("annualIncome").value).trim();
+        let annualInvestment = (document.getElementById("annualInvestment").value).trim();
+        let contactNo = (document.getElementById("contactNo").value).trim();
+
+        let error = false;
+
+
+        document.getElementById("name_error").innerHTML = "";
+        document.getElementById("age_error").innerHTML = "";
+        document.getElementById("annualIncome_error").innerHTML = "";
+        document.getElementById("annualInvestment_error").innerHTML = "";
+        document.getElementById("contactNo_error").innerHTML = "";
+
+
+        // console.log(name);
+        if (name == "") {
+            document.getElementById("name_error").innerHTML = "Empty Name";
+            error = true;
+        } else if (!(/^[a-zA-Z\s]+$/.test(name))) {
+            document.getElementById("name_error").innerHTML = "Wrong Name"
+            error = true;
+        }
+
+        if (age == "") {
+            document.getElementById("age_error").innerHTML = "Empty Age";
+            error = true;
+        } else if (!(/^[\d]+$/.test(age))) {
+            document.getElementById("age_error").innerHTML = "Wrong Age"
+            error = true;
+        } else if (age <= 0 || age > 100) {
+            document.getElementById("age_error").innerHTML = "Age Should between 1 to 100"
+            error = true;
+        }
+
+        if (annualIncome == "") {
+            document.getElementById("annualIncome_error").innerHTML = "Empty Annual Income";
+            error = true;
+        } else if (!(/^[\d]+$/.test(annualIncome))) {
+            document.getElementById("annualIncome_error").innerHTML = "Wrong Annual Income"
+            error = true;
+        } else if (annualIncome <= 0) {
+            document.getElementById("annualIncome_error").innerHTML = "Annual Income Should grater than 0"
+            error = true;
+        }
+
+        if (annualInvestment == "") {
+            document.getElementById("annualInvestment_error").innerHTML = "Empty Annual Investment";
+            error = true;
+        }
+        else if (!(/^[\d]+$/.test(annualInvestment))) {
+            document.getElementById("annualInvestment_error").innerHTML = "Wrong Annual Investment"
+            error = true;
+        } else if (annualInvestment <= 0) {
+            document.getElementById("annualInvestment_error").innerHTML = "Annual Investment Should grater than 0"
+            error = true;
+        } else if (Number(annualIncome) < Number(annualInvestment)) {
+            document.getElementById("annualInvestment_error").innerHTML = "Annual Investment is Bigger than Income"
+            error = true;
+        }
+
+        if (contactNo == "") {
+            document.getElementById("contactNo_error").innerHTML = "Empty Contact Number";
+            error = true;
+        } else if (!(/^[\d]+$/.test(contactNo))) {
+            document.getElementById("contactNo_error").innerHTML = "Wrong Contact Number"
+            error = true;
+        } else if (!(/^[\d]{10}$/.test(contactNo))) {
+            document.getElementById("contactNo_error").innerHTML = "Wrong Contact Number. 10 Character Required"
+            error = true;
+        }
+
+        if (!error) {
+            percentage = (100 * (annualInvestment / annualIncome)).toFixed(2);
+
+            document.getElementById("result").innerHTML = `you are investing a total of ${percentage} of your salary keep it up.`
+
+        }
+    }
+</script>
+
+</html>

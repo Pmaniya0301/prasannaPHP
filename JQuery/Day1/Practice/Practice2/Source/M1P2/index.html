@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="heading">Please select your technology :</label><br>
+    <label for="PHP">PHP: </label><input type="radio" name="technology" id="PHP"><span class="PHP"></span><br>
+    <label for="ASPNET">ASP.NET: </label><input type="radio" name="technology" id="ASPNET"><span
+        class="ASPNET"></span><br>
+    <label for="ASP">ASP:</label><input type="radio" name="technology" id="ASP"><span class="ASP"></span><br>
+    <label for="JSP">JSP:</label><input type="radio" name="technology" id="JSP"><span class="JSP"></span><br>
+    <label for="PERL">PERL:</label><input type="radio" name="technology" id="PERL"><span class="PERL"></span><br>
+    <label for="ColdFusion">Cold Fusion:</label><input type="radio" name="technology" id="ColdFusion"><span
+        class="ColdFusion"></span><br>
+    <label for="Other">Other:</label><input type="radio" name="technology" id="Other"><span class="Other"></span><br>
+</body>
+
+<script>
+
+    $($("input[name='technology']")).change(function () {
+        $("span").empty()
+        let className = $("input:checked").attr("id");
+        $(`.${className}`).text("You have selected : " + className)
+    })
+</script>
+
+</html>

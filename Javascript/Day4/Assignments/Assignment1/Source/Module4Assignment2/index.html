@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="mainContainer">
+<div id="CompletionTime"></div>
+<div id="CurruntTime"></div>
+</div>
+</body>
+<script>
+    time3Hours = 1000* 3;
+    
+    let timeForCompletion = new Date();
+    let time = timeForCompletion.getTime()
+    timeForCompletion.setTime(Number(time) + Number(time3Hours))
+    let CurruntTime2 = timeForCompletion.getHours() + ':' +timeForCompletion.getMinutes() + ':' + timeForCompletion.getSeconds();
+    document.getElementById("CompletionTime").innerHTML = `Your Completion  time of exam is: ${CurruntTime2}`
+
+    let interval = setInterval(() => {
+        let date = new Date();
+        let CurruntTime = date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds();
+        console.log(CurruntTime);
+
+        document.getElementById("CurruntTime").innerHTML = CurruntTime;
+    }, 1000);
+
+    setTimeout(() => {
+        clearInterval(interval)
+        document.getElementById("mainContainer").innerHTML = "Your exam is Completed"
+        console.log("Exam Is comleted");
+    }, time3Hours);
+</script>
+
+</html>

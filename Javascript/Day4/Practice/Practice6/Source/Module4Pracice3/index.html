@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        async function takeData(){
+            let data = await fetch("https://fakestoreapi.com/products");
+            console.log(await data.json());
+            await upadteData(await data);
+            
+        }
+
+        async function upadteData(data){
+            console.log("After receiving data from API this Line is been printed");
+            document.getElementById("result").innerHTML = data;
+        }
+
+        takeData()
+
+    </script>
+</body>
+</html>

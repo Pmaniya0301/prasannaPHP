@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        // function calcSquare(num){
+        //     console.log(num*num);
+        //     return num*num;
+        // }
+        // function passNumber(num, callback){
+        //     calcSquare(num)
+        // }
+        // passNumber(10, calcSquare);
+
+        // function square(a,callback){
+        //     callback(a*a);
+        // }
+        // square(10,function(num){
+        //     console.log(num)
+        // })
+
+        function square(a, callback){
+            callback(a*a)
+        }
+        square(10, (num)=>{
+            document.getElementById("result").innerHTML = num
+        })
+    </script>
+</body>
+</html>

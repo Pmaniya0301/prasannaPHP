@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        #mainContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 50%;
+        }
+
+        .personCards {
+            min-height: 300px;
+            min-width: 300px;
+            border: 2px solid black;
+            padding: 10px 10px 10px 10px;
+            margin: 10px;
+        }
+        .leaveDetails{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 50%;
+        }
+        td,th{
+            padding: 10px;
+        }
+        table{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainContainer"></div>
+    <div id="leaveDetails">
+        <Table id="leaveTable" border="1">
+            <caption>Leave Table</caption>
+            <thead>
+                <tr>
+                    <th>LeaveRequestID</th>
+                    <th>FromDate</th>
+                    <th>ToDate</th>
+                    <th>Days</th>
+                    <th>LeaveStatus</th>
+                    <th>LeaveType</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </Table>
+    </div>
+</body>
+<script>
+
+
+    let globalData;
+
+    fetch("https://res.cloudinary.com/des3si8bs/raw/upload/v1654770778/attendance/attandance_alc65n.JSON")
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            globalData = data;
+            console.log(globalData);
+            loadData(data);
+        })
+        .catch(rej => {
+            console.log(rej);
+        });
+
+    function loadData(data) {
+
+        data.forEach(person => {
+            let mainContainer = document.getElementById("mainContainer");
+            let leaveDetails = document.getElementById("leaveDetails");
+            let card = document.createElement("div");
+            let leaveDetailsForPerson = JSON.parse(person.LeaveDetails);
+            
+            card.setAttribute("class", "personCards")
+            card.innerHTML = `<p>Employee Code: ${person.EmpCode}</p><p>Name: ${person.EmployeeName}</p>
+            <p>Joining Date: ${person.JoinDate}</p>
+            <p id="leaveDays${person.EmpCode}">Leave Days: ${person.LeaveDays}</p><p>Present Days: ${person.PresentDays}</p>
+            <p>TotalDeskTime: ${person.TotalDeskTime}</p>
+            <p id="TotalProductiveTime${person.EmpCode}">TotalProductiveTime: ${person.TotalProductiveTime}</p>
+            <p>TotalWorkingDays: ${person.TotalWorkingDays}</p>
+            <button onclick="leaveDetails(${person.EmpCode})">View More</button>`
+            mainContainer.appendChild(card)
+
+            if (Number(person.LeaveDays) > 5) {
+                document.getElementById(`leaveDays${person.EmpCode}`).style.color = "red"
+            }
+            if (Number(person.LeaveDays) < 3) {
+                document.getElementById(`leaveDays${person.EmpCode}`).style.color = "purple"
+            }
+            
+            let productiveTime = ((person.TotalProductiveTime).toString()).replace(":", ".");
+            console.log(Number(productiveTime));
+            console.log((Number(person.TotalWorkingDays))*2);
+            if((Number(person.TotalWorkingDays))*2 >= Number(productiveTime)){
+                console.log("hello");
+                document.getElementById(`TotalProductiveTime${person.EmpCode}`).style.color = "green"
+            }
+        });
+    }
+
+    function leaveDetails(EmpCode) {
+
+        let personLeaveDetails = globalData
+        let person = personLeaveDetails.find(person => {
+            return person.EmpCode == EmpCode
+        })
+        let leaveDetails = document.getElementById("leaveDetails");
+        let leaveDetailsForPerson = JSON.parse(person.LeaveDetails);
+        console.log(leaveDetailsForPerson);
+        let tableBody = document.getElementById("tableBody")
+        tableBody.innerHTML = "";
+        leaveDetailsForPerson.forEach(leave => {
+            tableBody.innerHTML += `<tr><td>${leave.LeaveRequestID}</td><td>${leave.FromDate}</td>
+                <td>${leave.ToDate}</td><td>${leave.Days}</td>
+                <td>${leave.LeaveStatus}</td><td>${leave.LeaveType}</td></tr>`
+        });
+    }
+</script>
+
+</html>

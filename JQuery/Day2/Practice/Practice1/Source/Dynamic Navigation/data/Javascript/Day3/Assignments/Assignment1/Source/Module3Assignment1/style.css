@@ -1,0 +1,65 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(245, 248, 250);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+input, select, button{
+    margin-top: 10px;
+}
+#container {
+    border: 5px;
+    border-color: rgb(5, 25, 75);
+    border-style: inset;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgb(5, 30, 80);
+}
+
+#container:hover{
+    box-shadow: 8px 8px 20px rgb(5, 30, 80);
+}
+
+.lables_head {
+    color: rgb(5, 30, 80);
+    font-size: large;
+    font-weight: 600;
+}
+
+#submitButton {
+    font-size: large;
+    font-weight: 700;
+    color: rgb(200, 232, 255);
+    background-color: rgb(5, 25, 75);
+    padding: 5px 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+span{
+    color: red;
+    font-size: medium;
+    font-weight: 500;
+}
+
+th{
+    font-size: large;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+
+td{
+    font-size: medium;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+table{
+    margin: 20px;
+}
+
+form {
+    padding: 20px;
+}

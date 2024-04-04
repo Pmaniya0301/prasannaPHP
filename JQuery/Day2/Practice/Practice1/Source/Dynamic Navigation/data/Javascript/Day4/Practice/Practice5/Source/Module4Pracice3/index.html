@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 76, 8, 9, 0];
+
+        //var printing 0s
+        //here var shares a single i variable for the all values, so we getting only last value
+        for (let i = 0; i < arr.length; i++) {
+            var num = arr[i];
+            setTimeout(() => {
+                let double = num*2;
+                console.log(double);
+            }, 1000);
+        }
+
+        //let printing actual double of them bcz let has its own i variable
+        // for (let i = 0; i < arr.length; i++) {
+        //     let num = arr[i];
+        //     setTimeout(() => {
+        //         let double = num*2;
+        //         console.log(double);
+        //     }, 1000);
+        // }
+
+    </script>
+</body>
+
+</html>

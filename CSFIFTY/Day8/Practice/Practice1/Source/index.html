@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Form</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="container">
+        <!-- <form method="post" onsubmit="return validate()"> -->
+        <form id="regForm" onsubmit="return validate()">
+            <div class="mini_container">
+                <label for="name" class="lables_head">Name :&nbsp;</label>
+                <input type="text" name="name_inputbox" id="name_inputbox_id">
+                <span id="name_error" class="error"></span>
+            </div>
+            <div class="mini_container">
+                <label for="state" class="lables_head">State :&nbsp;</label>
+                <select name="state" id="state_id" onchange="updateCity()">
+                    <option value="Select State">Select State</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Maharasthra">Maharasthra</option>
+
+                </select><span id="state_error" class="error"></span>
+            </div>
+            <div class="mini_container">
+                <label for="city" class="lables_head">City :&nbsp;</label>
+                <select name="city" id="city_id" onchange="updateArea()">
+                    <option value="Select City">Select City</option>
+                </select><span id="city_error" class="error"></span>
+            </div>
+            <div class="mini_container">
+                <label for="area" class="lables_head">Area :&nbsp;</label>
+                <select name="area" id="area_id">
+                    <option value="Select Area">Select Area</option>
+                </select><span id="area_error" class="error"></span>
+            </div>
+            <div class="mini_container">
+                <label for="dob" class="lables_head">DOB :&nbsp;</label>
+                <input type="date" name="datepicker" id="user_dob_id">
+                <span id="date_error" class="error"></span>
+            </div>
+            <div class="mini_container">
+                <label for="gender" class="lables_head">Gender :&nbsp;</label>
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male" class="lables_inside">Male</label>&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female" class="lables_inside">Female</label>&nbsp;
+            </div>
+            <div class="mini_container">
+                <label for="hobbies" class="lables_head">Hobbies :&nbsp;</label>
+                <input type="checkbox" id="hobby1" name="hobby" value="playing">
+                <label for="hobby1" class="lables_inside">Playing</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="hobby2" name="hobby" value="travelling">
+                <label for="hobby2" class="lables_inside">Travelling</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="hobby3" name="hobby" value="photography">
+                <label for="hobby3" class="lables_inside">Photography</label>&nbsp;
+                <span id="hobby_error" class="error"></span>
+            </div>
+            <div class="mini_container" id="submit_button_container">
+                <button type="button" id="submitButton" onclick="validate()">submit</button>
+            </div>
+
+        </form>
+        <div id="entries">
+            <table id="table_show" border="1">
+                <thead>
+                        <th>Name</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Area</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Hobby</th>
+                        <th>Delete</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

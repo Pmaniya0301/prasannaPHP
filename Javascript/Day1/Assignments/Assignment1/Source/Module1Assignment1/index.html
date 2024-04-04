@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Operations</title>
+<link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+ 
+    <div id="calculator-container">
+        <label for="firstnumber">Please enter first number:</label>
+        <input type="text" id="firstnumber"><br>
+        <div class="error-message" id="firstnumber-error"></div><br>
+ 
+        <label for="secondnumber">Please enter second number:</label>
+        <input type="text" id="secondnumber"><br>
+        <div class="error-message" id="secondnumber-error"></div><br>
+ 
+        <label>Please select operation you want to perform:</label><br>
+        <!-- <input type="radio" name="operation" id="addition" value="addition"> Addition<br>
+        <input type="radio" name="operation" id="subtraction" value="subtraction"> Subtraction<br>
+        <input type="radio" name="operation" id="multiplication" value="multiplication"> Multiplication<br>
+        <input type="radio" name="operation" id="division" value="division"> Division<br> -->
+ 
+
+        <input type="radio" name="operation" id="addition" value="addition">Addition
+        <input type="radio" name="operation" id="subtraction" value="subtraction">Subtraction
+        <input type="radio" name="operation" id="multiplication" value="multiplication">Multiplication
+        <input type="radio" name="operation" id="division" value="division">Division
+        <div class="error-message" id="operation-error"></div><br>
+        
+        <button id="getresult">Calculate</button>
+        <button id="reset">Reset</button><br>
+ 
+        <label></label>
+        <div id="result"></div>
+    </div>
+ 
+    <script src="main.js"></script>
+ 
+</body>
+ 
+</html>

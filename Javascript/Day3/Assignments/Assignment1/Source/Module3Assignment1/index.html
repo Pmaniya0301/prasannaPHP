@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <form id="regForm">
+            <label for="empid" class="lables_head">ID :&nbsp;</label>
+            <input type="text" name="empid" id="empid">
+            <span id="spanEmpid" class="error"></span><br>
+
+            <label for="name" class="lables_head">Name :&nbsp;</label>
+            <input type="text" name="name" id="empname">
+            <span id="spanEmpname" class="error"></span><br>
+
+            <label for="age" class="lables_head">Age :&nbsp;</label>
+            <input type="text" name="age" id="age">
+            <span id="spanAge" class="error"></span><br>
+
+            <label for="gender" class="lables_head">Gender :&nbsp;</label>
+            <input type="radio" id="male" name="gender" value="male" checked>
+            <label for="male" class="lables_inside">Male</label>&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="male" class="lables_inside">Female</label>&nbsp;&nbsp;&nbsp;<br>
+
+            <label for="designation" class="lables_head">Designation :&nbsp;</label>
+            <input type="text" name="designation" id="designation">
+            <span id="spanDesignation" class="error"></span><br>
+
+            <label for="salary" class="lables_head">salary :&nbsp;</label>
+            <input type="number" name="salary" id="salary">
+            <span id="spanSalary" class="error"></span><br>
+
+            <label for="location" class="lables_head">location :&nbsp;</label>
+            <select name="location" id="location">
+                <option value="">Select Location</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Calcutta">Calcutta</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+            </select><span id="spanLocation" class="error"></span><br>
+
+            <label for="email" class="lables_head">Email :&nbsp;</label>
+            <input type="email" name="email" id="email">
+            <span id="spanEmail" class="error"></span><br>
+
+            <label for="doj" class="lables_head">Date Of Joining :&nbsp;</label>
+            <input type="date" name="datepicker" id="joiningDate">
+            <span id="spanDateOfJoining" class="error"></span><br>
+
+            <label for="contactNo" class="lables_head">Contact No :&nbsp;</label>
+            <input type="number" name="contactNo" id="contact">
+            <span id="spanContactNo" class="error"></span><br>
+
+            <button type="button" id="btnSubmit" onclick="validate()">submit</button>
+
+        </form>
+
+        <table id="dataShow" border="1">
+            <caption>User Datails</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Dasignation</th>
+                    <th>Salary</th>
+                    <th>Location</th>
+                    <th>Email</th>
+                    <th>Date Of Joining</th>
+                    <th>Contact No</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="main.js">
+
+    </script>
+</body>
+
+</html>

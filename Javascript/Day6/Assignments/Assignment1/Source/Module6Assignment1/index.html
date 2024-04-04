@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #buttonContainer {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        #mainContainer {
+            display: inline-grid;
+            grid-template-columns: auto auto auto;
+            gap: 50px;
+        }
+
+        .cards {
+            max-width: 300px;
+            max-height: 600px;
+            border: 1px solid rgb(202, 202, 202);
+            background-color: rgb(246, 246, 246);
+            box-shadow: 2px 2px 5px black;
+            padding: 10px;
+        }
+
+        .cards:hover {
+            box-shadow: 5px 5px 10px black;
+        }
+
+        button {
+            justify-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="buttonContainer"><button onclick="showintoConsole()">Show the Items In To Console</button></div>
+    <div id="mainContainer"></div>
+</body>
+<script>
+
+    let globalData;
+
+    fetch("https://fakestoreapi.com/products").then(res => {
+        return res.json()
+    }).then(data => {
+        globalData = data
+        loadData(data);
+    }).catch(rej => {
+        console.log(rej);
+    })
+
+    function loadData(data) {
+        let mainContainer = document.getElementById("mainContainer")
+
+        data.forEach(product => {
+            let card = document.createElement("div")
+            card.setAttribute("class", "cards")
+            card.innerHTML = `<img src=${product.image}></img>
+            <p id="title${product.id}">${product.title}</p>
+            <p id="rating${product.id}">${product.rating.rate} from ${product.rating.count}</p>
+            <p id="Description${product.id}">${product.description}</p>
+            <button onclick=saveDetails(${product.id})>Save</button>`
+            mainContainer.appendChild(card)
+        });
+    }
+
+    function saveDetails(id) {
+        console.log(id);
+        console.log(globalData);
+
+        let item = globalData.find(item => {
+            return item.id == id;
+        })
+        console.log(item);
+
+        localDataItems = localStorage.getItem("localDataItems");
+        if (!localDataItems) {
+            localDataItems = [];
+        } else {
+            localDataItems = JSON.parse(localDataItems);
+        }
+        localDataItems.push(item);
+        localStorage.setItem("localDataItems", JSON.stringify(localDataItems))
+    }
+
+    function showintoConsole() {
+        localDataItems = localStorage.getItem("localDataItems");
+        localDataItems = JSON.parse(localDataItems);
+        console.log(localDataItems);
+    }
+    function showintoConsole() {
+        localDataItems = localStorage.getItem("localDataItems");
+        localDataItems = JSON.parse(localDataItems);
+        console.log(localDataItems);
+    }
+
+</script>
+
+</html>

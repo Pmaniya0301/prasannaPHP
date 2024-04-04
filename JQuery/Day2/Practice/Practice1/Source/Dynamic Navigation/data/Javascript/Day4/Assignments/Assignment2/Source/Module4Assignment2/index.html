@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <!-- //will break data in to three parts 
+    //will make form -->
+</head>
+
+<body>
+    <div id="container">
+
+    <span id="globalError"></span><br>
+    <form>
+        <input type="text" name="txtSearch" id="txtSearch" placeholder="Search a Flight Based on the Name">
+        <span id="txtsearch_error"></span><br>
+
+        <select name="source" id="Source">
+            <option value="">Choose Source</option>
+        </select>
+        <span id="source_error"></span><br>
+
+        <select name="destination" id="Destination">
+            <option value="">Choose Destination</option>
+        </select>
+        <span id="destination_error"></span><br>
+
+        
+
+        <input type="text" name="departureDate" id="departureDate" placeholder="YYYY-MM-DD">
+        <span id="date_error"></span><br>
+
+        <input type="button" value="Submit"  id="btnSearch">
+
+    </form>
+
+    <br><br>
+    <table id="FlightList" border="1">
+        <caption>Table for showing Flight Details.</caption>
+        <thead>
+            <tr>
+                <th id="heading" colspan="5">
+                    Flight Listing
+                </th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th id="fnameth">Flight Name</th>
+                <th id="srcth">Source</th>
+                <th id="destth">Destination</th>
+                <th id="priceth">Price</th>
+                <th id="bookth">Book</th>
+            </tr>
+        </thead>
+        <tbody id="theadOfFlight">
+        </tbody>
+    </table>
+</div>
+</body>
+
+<script src="index.js">
+ </script>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/BookFlight.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+    <form>
+    <span for="FlightName" id="FlightName"></span><br>
+    <span for="FlightPrice" id="FlightPrice"></span><br>
+    <input type="text" name="name" id="Name" required placeholder="Enter Your Name" onchange="checkValidations()"><span id="name_error"></span><br>
+    <input type="number" name="noOfPerson" id="Qty" required placeholder="Enter Person Count" onchange="checkValidations()"><span id="count_error"></span><br>
+    <span for="tax" id="tax"></span><br>
+    <input type="number" name="totalprice" id="totalPrice" readonly><br>
+    <input type="submit" value="Book Flight" id="btnbook"><br>
+</form>
+</div>
+</body>
+<script src="bookFlight.js"></script>
+</html>

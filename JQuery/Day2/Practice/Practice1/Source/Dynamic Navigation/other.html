@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <nav id="subjectNav"></nav>
+  <div id="ModuleList"></div>
+  <select name="practice" id="practice"><option value=""></option></select>
+  <div id="showInContainer"></div>
+</body>
+
+<script>
+  $(document).ready(function () {
+
+    $.getJSON("/data.json", function (data) {
+      console.log(data);
+
+      let ul = $("<ul></ul>")
+      $.each(data, function (key, val) {
+        $("<li></li>").text(`${val.subjectName}`).appendTo(ul).click(function () {
+          $(val.Module).each(function (key, module) {
+            console.log(module);
+
+            $("#ModuleList").html("")
+            let keysForModule = Object.keys(module)
+            $(keysForModule).each(function (index, ModuleName) {
+              let modulePrint = $("<div></div>").text(ModuleName)
+              let practices = module[keysForModule[index]].Practices
+              let assignment = module[keysForModule[index]].Assignments
+
+              $(practices).each(function (key, data) {
+                let practicesKeys = Object.keys(data);
+                $(practicesKeys).each(function (index, practiceName) {
+                  console.log(data[practicesKeys[index]]);
+                  let pracName = $("<li></li>").text(practicesKeys[index]).click(function () {
+                    console.log(data[practicesKeys[index]]);
+                    let link = "" + (data[practicesKeys[index]])
+                    $("#showInContainer").html(`<iframe src="${link}"></iframe>`)
+                  })
+                  modulePrint.append(pracName)
+                })
+              })
+
+              $(assignment).each(function (key, data) {
+                let assignmentKey = Object.keys(data);
+                $(assignmentKey).each(function (index, assignmentName) {
+                  let assiName = $("<li></li>").text(assignmentKey[index]).click(function () {
+                    console.log(data[assignmentKey[index]]);
+                    let link = "" + (data[assignmentKey[index]])
+                    $("#showInContainer").html(`<iframe src="${link}"></iframe>`)
+                  })
+                  modulePrint.append(assiName)
+                })
+              })
+              modulePrint.appendTo("#ModuleList")
+              console.log(practices, assignment);
+            })
+          })
+        })
+      })
+      $("#subjectNav").append(ul)
+    })
+
+  })
+</script>
+
+</html>

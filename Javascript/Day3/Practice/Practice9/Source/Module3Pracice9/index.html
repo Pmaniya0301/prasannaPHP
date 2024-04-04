@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Practice 9</title>
+</head>
+
+<body>
+
+    <form>
+        <div id="1">
+            <label for="name">Enter Name</label><br>
+            <input type="text" name="name" id="name"><br>
+            <button onclick="nextSection(2)">Next</button>
+        </div>
+        <div id="2">
+            <label for="email">Enter Email</label><br>
+            <input type="email" name="email" id="email"><br>
+            <button onclick="previousSection(1)">Previous</button>
+            <button onclick="nextSection(3)">Next</button>
+        </div>
+        <div id="3">
+            <label for="number">Enter Number</label><br>
+            <input type="number" name="number" id="number"><br>
+            <button onclick="previousSection(2)">Previous</button>
+            <button onclick="submitForm()">Submit</button>
+        </div>
+    </form>
+    </div>
+
+</body>
+<script>
+
+
+    let steps = document.querySelectorAll("form div");
+
+    function nextSection(currentStep) {
+        window.addEventListener("popstate", function () {
+            let stepid = location.hash.charAt(1);
+            if(stepid <= steps.length){
+            loadSection(Number(stepid)+1)
+            }
+        });
+    }
+
+    function previousSection(currentStep) {
+        window.addEventListener("popstate", function () {
+            let stepid = location.hash.charAt(1);
+            if(stepid > 0 ){
+            loadSection(stepid-1)
+            }
+        });
+    }
+
+    window.addEventListener("DOMContentLoaded", function(){
+        let initialLocation = location.hash.charAt(1);
+        if(initialLocation == ""){
+            loadSection(1)
+        }else{
+            loadSection(initialLocation)
+
+        }
+        })
+
+    function loadSection(stepid) {
+        if(stepid <= 0){
+            stepid = 1;
+        }
+        if (stepid >= 3) {
+            stepid = 3;
+        }
+        history.pushState(null, null, `#${stepid}`)
+        steps.forEach(step =>{
+            
+            let id = step.getAttribute("id")
+            if(id == stepid){
+                step.style.display = "block";
+            }else{
+                step.style.display = "none";
+            }
+        })
+
+    }
+</script>
+
+</html>

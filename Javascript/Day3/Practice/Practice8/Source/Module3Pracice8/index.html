@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        ul{
+            display: flex-box;
+            
+        }
+        h1{
+            padding 400px;
+        }
+        nav{
+            background-color: beige;
+            box-shadow: 5px 5px 10px rgb(33, 32, 32);
+            margin: 30px;
+            margin-bottom: 40px;
+        }
+        li{
+            list-style-type: none;
+            padding: 10px;
+            padding-left: 0px;        
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            font-size: large;
+        }
+
+        #section1,#section2, #section3{
+            margin: 30px;
+            margin-bottom: 40px;
+            /* border: 2px solid black; */
+            padding: 20px;
+            background-color: beige;
+            box-shadow: 5px 5px 10px black;
+        } 
+    </style>
+    <title>Module 3 - Pracice 8</title>
+</head>
+
+<body>
+    <nav>
+        <ul id="navul">
+        </ul>
+    </nav>
+    <div id="section_container">
+        <div id="section1">
+            <h1>Section 1</h1>
+        </div>
+        <div id="section2">
+            <h1>Section 2</h1></div>
+        <div id="section3">
+            <h1>Section 3</h1></div>
+    </div>
+</body>
+<script>
+
+    let sections = document.querySelectorAll("#section_container div");
+
+    for (let i = 0; i < sections.length; i++) {
+
+        let ul = document.getElementById("navul");
+        let li = document.createElement("li");
+        let atag = document.createElement("a");
+        atag.setAttribute("href", `#section${i + 1}`);
+        atag.setAttribute("target", `_self`);
+        atag.textContent = `Section${i + 1}`;
+        console.log(atag);
+        li.appendChild(atag);
+        ul.appendChild(li);
+    }
+
+</script>
+
+</html>

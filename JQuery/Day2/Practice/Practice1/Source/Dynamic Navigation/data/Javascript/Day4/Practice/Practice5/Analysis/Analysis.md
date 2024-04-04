@@ -1,0 +1,1 @@
+1. iterate over an array and perform asynchronous operations inside a loop and emonstrate how var and let behave differently in this scenario

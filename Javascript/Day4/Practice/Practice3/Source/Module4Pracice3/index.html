@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function practice3(num) {
+        //     const promiseForPractice3 = new Promise(function (resolve, reject) {
+        //         setTimeout(() => {
+        //             console.log(num + " Here is Parameter is Printed");
+        //             resolve();
+        //         }, 500);
+        //     })
+        //     promiseForPractice3.then(function () {
+        //     console.log("After the process done This code will execute");
+        // })
+        // }
+        // practice3(9);
+
+
+        function practice3(num) {
+            const promiseForPractice3 = new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    console.log(num + " Here is Parameter is Printed");
+                    resolve(num);
+                }, 500);
+            })
+            promiseForPractice3.then(function (num) {
+            console.log(num + " After the process this way we can pass the data also");
+        })
+        }
+        practice3(9);
+
+
+    </script>
+</body>
+
+</html>

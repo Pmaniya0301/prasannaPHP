@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main_container">
+    <input type="number" name="number" id="number">
+    <div id="result"></div>
+    <button onclick="check()"></button>
+  </div>
+
+  <script>
+    function check(){
+      let number = document.getElementById("number").value();
+
+
+      for (let i = 0; i < number; i++) {
+        if(factorial(i) = number){
+          document.getElementById("result").innerHTML = "Found"
+        }else{
+          document.getElementById("result").innerHTML = "Not Found"
+        }
+      }
+
+    }
+
+   function factorial(num){
+      for (let i = 1; i <= num; i++) {
+        const fact = fact*i;
+      }
+      return fact;
+    }
+  </script>
+  
+</body>
+
+</html>
