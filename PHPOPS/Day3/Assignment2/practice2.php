@@ -1,4 +1,4 @@
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+<?php include "../../../lib/common.php" ?>
 
 <div class="mb-4 fw-bold">Task: PHP script to get the server IP address.</div>
 
@@ -10,4 +10,4 @@
         ?>
     </div>
 </div>
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

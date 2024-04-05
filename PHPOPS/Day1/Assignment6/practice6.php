@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
+include "../../../lib/common.php";
 ?>
 
 <div class="mb-4 fw-bold">Task: Implement a simple web-application (see picture below) that asks a question from
@@ -41,4 +41,6 @@ the user and evaluates if the answer is correct.</div>
 </div>
 </div>
 
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php
+include "../../../lib/footer.php";
+?>

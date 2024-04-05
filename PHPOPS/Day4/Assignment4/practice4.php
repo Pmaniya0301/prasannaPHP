@@ -1,4 +1,4 @@
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+<?php include "../../../lib/common.php" ?>
 <div class="mb-4 fw-bold">Task: Display Department, name and salary Who has more than
 10,000 salary</div>
 <div class="d-flex align-self-center justify-content-center">
@@ -20,4 +20,4 @@
         ?>
     </div>
 </div>
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

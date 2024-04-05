@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
+include "../../../lib/common.php"
 ?>
 
 <div class="mb-4 fw-bold">Day 6 - Practice 2: Swap Two Numbers.</div>
@@ -48,5 +48,5 @@ include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
 </div>
 
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";
+include "../../../lib/footer.php"
 ?>

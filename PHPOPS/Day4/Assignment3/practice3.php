@@ -1,4 +1,4 @@
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+<?php include "../../../lib/common.php" ?>
 <div class="mb-4 fw-bold">Task: PHP script to calculate and display average temperature, five lowest and highest
 temperatures.</div>
 <div class="d-flex align-self-center justify-content-center">
@@ -27,4 +27,4 @@ temperatures.</div>
         ?>
     </div>
 </div>
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

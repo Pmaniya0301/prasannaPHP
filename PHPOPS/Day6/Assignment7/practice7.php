@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
+include "../../../lib/common.php"
 ?>
 <div class="d-flex align-self-center justify-content-center">
     <div class="d-inline border border-2 p-4 shadow p-3 mb-2 bg-body rounded">
@@ -83,5 +83,5 @@ include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
 </div>
 
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";
+include "../../../lib/footer.php"
 ?>

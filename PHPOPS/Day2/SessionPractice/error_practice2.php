@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+include "../../../lib/common.php" ?>
 <div class="mb-4 fw-bold">Task: Program For Practicing to Print Error</div>
 <?php
 ini_set('display_errors', '1');
@@ -13,4 +13,4 @@ echo "<br><br>This is Error";
 $x = 1 / 0;
 ?>
 
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
+include "../../../lib/common.php";
 ?>
 
 <div class="mt-4 fs-5 fw-bold text-dark">
@@ -12,7 +12,7 @@ include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
 
         if (is_numeric($height) && is_numeric($weight)) {
             $result = $weight / ($height * $height);
-            echo round($result, 2);
+            echo "Your Output is:" . round($result, 2);
         } else {
             echo "Enter Correct Value";
         }
@@ -22,6 +22,5 @@ include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
 </div>
 
 <?php
-
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";
+include "../../../lib/footer.php";
 ?>

@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
+include "../../../lib/common.php";
 ?>
 <div class="mb-4 fw-bold">Task: Implement a simple calculator utility-program, which can be used to calculate a person's Body Mass Index (BMI).</div>
 
@@ -18,7 +18,6 @@ include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
     </div>
 </div>
 
-
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";
+include "../../../lib/footer.php";
 ?>

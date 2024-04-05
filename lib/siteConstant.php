@@ -11,11 +11,10 @@ if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
     $CurrentProtocol = "http://";
 }
 define('SITE_PROTOCOL', $CurrentProtocol);
-if(strpos($_SERVER['HTTP_HOST'], "opsusers") !== FALSE || strpos($_SERVER['HTTP_HOST'], "ops") !== FALSE || strpos($_SERVER['HTTP_HOST'], "localhost") !== FALSE || strpos($_SERVER['HTTP_HOST'], "training2023") !== FALSE){
-    $directory .= 'aaftab/'; // change with your name (all lower case, and do not remove /)
+if (strpos($_SERVER['HTTP_HOST'], "opsusers") !== FALSE || strpos($_SERVER['HTTP_HOST'], "ops") !== FALSE ||  strpos($_SERVER['HTTP_HOST'], "training2024") !== FALSE) {
+    $directory .= 'prasann/'; // change with your name (all lower case, and do not remove /)
 }
 define('SITE_DIRECTORY', $directory);
 define('SITE_URL', SITE_PROTOCOL . $_SERVER['HTTP_HOST'] . SITE_DIRECTORY);
-
 // echo SITE_URL;
-http://localhost/aaftab/
+// http://localhost/prasann/

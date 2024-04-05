@@ -1,4 +1,4 @@
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+<?php include "../../../lib/common.php" ?>
 <div class="mb-4 fw-bold">Task:  PHP script, and perform operations like Display the first element, Display the capital and country name and Sort the list by the name of the country.</div>
 <div class="align-self-center justify-content-center">
     <!-- <div class="d-inline border border-2 p-4 shadow bg-body rounded"> -->
@@ -44,4 +44,4 @@
     </div>
 </div>
 
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

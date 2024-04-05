@@ -1,4 +1,4 @@
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+<?php include "../../../lib/common.php" ?>
 <div class="mb-4 fw-bold">Task: Create one form with some of the input boxes, and apply below functions of array on
 values of that input boxes.</div>
 <div class="d-flex align-self-center justify-content-center">
@@ -40,4 +40,4 @@ values of that input boxes.</div>
     </div>
 </div>
 
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

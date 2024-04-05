@@ -1,4 +1,4 @@
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+<?php include "../../../lib/common.php" ?>
 <div class="mb-4 fw-bold">Task:   PHP program to compute and return the square root of a given number</div>
 <div class="d-flex align-self-center justify-content-center">
     <div class="d-inline border border-2 p-4 shadow bg-body rounded">
@@ -21,4 +21,4 @@
     </div>
 </div>
 
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

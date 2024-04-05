@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
+include "../../../lib/common.php";
 ?>
 <div class="mb-4 fw-bold">Task: Modify BMI-application (exercise 4) so that user input is validated. The maximum
 length for height is 4 characters and the value must be float value. The maximum
@@ -20,5 +20,5 @@ length for weight is 3 characters and the value must be an integer. </div>
     </div>
 </div>
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";
+include "../../../lib/footer.php";
 ?>

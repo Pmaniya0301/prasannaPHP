@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
+include "../../../lib/common.php"
 ?>
 
 <div class="mb-4 fw-bold">Day 6 - Practice 5: Program to create Calculator functionality for two numbers as input.</div>
@@ -39,5 +39,5 @@ include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
 </div>
 
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";
+include "../../../lib/footer.php"
 ?>

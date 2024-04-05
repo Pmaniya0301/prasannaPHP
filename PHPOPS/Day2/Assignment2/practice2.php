@@ -1,4 +1,4 @@
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+<?php include "../../../lib/common.php" ?>
 
 <div class="mb-4 fw-bold">Task: Program which accepts Year from the select box and display computed age
 based on the Selected Value</div>
@@ -28,4 +28,4 @@ based on the Selected Value</div>
     </div>
 </div>
 
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

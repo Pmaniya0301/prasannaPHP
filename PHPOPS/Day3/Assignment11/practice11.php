@@ -1,4 +1,4 @@
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php"; ?>
+<?php include "../../../lib/common.php" ?>
 <div class="mb-4 fw-bold">Task: Write a form with 4 inputs like email, hostname, telephone number (Indian number
 only) and IP address when submitting the form its validate all fields and display
 results in the result area.</div>
@@ -70,4 +70,4 @@ results in the result area.</div>
     </div>
 </div>
 
-<?php include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";  ?>
+<?php include "../../../lib/footer.php"  ?>

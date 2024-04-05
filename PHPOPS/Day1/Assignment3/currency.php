@@ -1,5 +1,5 @@
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
+include "../../../lib/common.php";
 ?>
 
 <div class="mb-4 fw-bold">Task: Simple currency calculator utility-program calculate currency conversions from dollars to euros</div>
@@ -14,5 +14,5 @@ include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/header.php";
     </div>
 </div>
 <?php
-include "../../../../3000-Prasann.M-24-PHPOPS/PHPOPS/headerfooter/footer.php";
+include "../../../lib/footer.php";
 ?>
